@@ -32,6 +32,8 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder CARPETA_MAQ_FIS, CARPETA_MAQ_VIR
   config.vm.network "forwarded_port", guest: PORT_VIR1, host: PORT_FIS1, protocol: "tcp"
   config.vm.network "forwarded_port", guest: PORT_VIR2, host: PORT_FIS2, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 8082, host: 8001, protocol: "tcp"
+
 
   # PROGRAMARI A INSTAL·LAR I ORDRES A EXECUTAR DURANT LA CREACIÓ DE LA MÀQUINA
   config.vm.provision "shell", inline: <<-SHELL
